@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header class="bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Orders</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mt-4">
+        <section id="products" class="mt-4">
+            <h2>Orders list</h2>
+            {% if names %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Prod Name</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+       
+                <tbody>
+
+                    <tr>
+                        <td>{{names.customerName}}</td>
+                        <td>{{names.productName}}</td>
+                        <td>{{names.orderDate}}</td>
+                        <td><a href='{{names.productName}}'>View</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            {% else %}
+            There are no names.
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>
